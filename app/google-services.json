@@ -1,0 +1,30 @@
+{
+  "project_info": {
+    "project_number": "723703016955",
+    "firebase_url": "https://nafuu-app-default-rtdb.firebaseio.com",
+    "project_id": "nafuu-app",
+    "storage_bucket": "nafuu-app.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:723703016955:android:d4ef09c6e42b0d59fd6f5e",
+        "android_client_info": {
+          "package_name": "com.example.nafuurealestateapp"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAsYBnJuwYZqZMCJX7Ytod5ONdWKcy20fk"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
