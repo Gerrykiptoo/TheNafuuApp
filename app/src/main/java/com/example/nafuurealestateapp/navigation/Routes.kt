@@ -17,5 +17,7 @@ const val ROUTE_SERVICE_CATEGORIES = "Service_categories"
 const val ROUTE_LOCATION_SERVICE = "location_services"
 const val ROUTE_BUILDING_GREEN="Building_Green"
 const val ROUTE_GENERAL_CONSTRUCTION="general_construction"
-
-
+const val ROUTE_ADD_SERVICE="add_service"
+const val ROUTE_VIEW_SERVICE="viewing services"
+const val ROUTE_VIEW_UPLOAD="view_upload"
+const val ROUTE_SIGN_UP_TWO="signup_two"

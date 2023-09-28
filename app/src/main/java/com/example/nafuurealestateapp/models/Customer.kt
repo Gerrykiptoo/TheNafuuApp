@@ -12,5 +12,6 @@ class Customer {
         this.password = password
         this.credential = credential
     }
+
     constructor()
 }

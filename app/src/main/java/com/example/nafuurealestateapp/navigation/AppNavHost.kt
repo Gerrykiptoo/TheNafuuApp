@@ -7,6 +7,9 @@ import androidx.navigation.NavHostController
 import androidx.navigation.compose.NavHost
 import androidx.navigation.compose.composable
 import androidx.navigation.compose.rememberNavController
+import com.example.nafuurealestateapp.ui.theme.pages.contractandconstrutionwork.AddServiceScreen
+import com.example.nafuurealestateapp.ui.theme.pages.contractandconstrutionwork.ViewServicesScreen
+import com.example.nafuurealestateapp.ui.theme.pages.contractandconstrutionwork.ViewUploadsScreen
 import com.example.nafuurealestateapp.ui.theme.pages.home.HomeScreen
 import com.example.nafuurealestateapp.ui.theme.pages.login.LoginScreen
 import com.example.nafuurealestateapp.ui.theme.pages.services.BuildingGreenScreen
@@ -20,8 +23,8 @@ import com.example.nafuurealestateapp.ui.theme.pages.services.LandScaping
 import com.example.nafuurealestateapp.ui.theme.pages.services.LocationServiceScreen
 import com.example.nafuurealestateapp.ui.theme.pages.services.ServiceCategoryScreen
 import com.example.nafuurealestateapp.ui.theme.pages.services.UploadScreen
-import com.example.nafuurealestateapp.ui.theme.pages.signup.SignupScreen
-
+import com.example.nafuurealestateapp.ui.theme.pages.signup.SignupScreenone
+import com.example.nafuurealestateapp.ui.theme.pages.signup.SignupasOtherServiceProviders
 
 
 @Composable
@@ -37,7 +40,7 @@ fun AppNavHost(modifier: Modifier = Modifier,
             LoginScreen(navController)
         }
         composable(ROUTE_SIGNUP) {
-            SignupScreen(navController)
+            SignupScreenone(navController)
 
         }
         composable(ROUTE_HOME) {
@@ -75,7 +78,20 @@ fun AppNavHost(modifier: Modifier = Modifier,
         composable(ROUTE_GENERAL_CONSTRUCTION){
             GeneralConstructionScreen(navController)
         }
+        composable(ROUTE_ADD_SERVICE){
+            AddServiceScreen(navController)
+        }
+        composable(ROUTE_VIEW_SERVICE){
+            ViewServicesScreen(navController)
 
+        }
+        composable(ROUTE_VIEW_UPLOAD){
+          ViewUploadsScreen(navController)
+
+        }
+        composable(ROUTE_SIGN_UP_TWO){
+            SignupasOtherServiceProviders(navController )
+        }
 
 
 

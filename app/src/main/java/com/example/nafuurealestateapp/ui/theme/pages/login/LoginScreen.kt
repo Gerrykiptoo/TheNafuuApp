@@ -122,7 +122,7 @@ fun LoginScreen(navController: NavHostController){
 
            },
                colors = ButtonDefaults.buttonColors(Buttonblue)) {
-               Text(text = "No account signup",
+               Text(text = "No account?? signup as customer",
                    fontFamily = FontFamily.Cursive,
                    fontSize = 25.sp)
 

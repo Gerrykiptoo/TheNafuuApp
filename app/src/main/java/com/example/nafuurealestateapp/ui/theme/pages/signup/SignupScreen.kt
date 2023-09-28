@@ -37,20 +37,23 @@ import androidx.compose.ui.unit.sp
 import androidx.navigation.NavHostController
 import androidx.navigation.compose.rememberNavController
 import com.example.nafuurealestateapp.R
+import com.example.nafuurealestateapp.navigation.ROUTE_ADD_SERVICE
+import com.example.nafuurealestateapp.navigation.ROUTE_HOME
 import com.example.nafuurealestateapp.navigation.ROUTE_LOGIN
+import com.example.nafuurealestateapp.navigation.ROUTE_SIGN_UP_TWO
 import com.example.nafuurealestateapp.ui.theme.Buttonblue
 import com.example.nafuurealestateapp.ui.theme.NafuuRealEstateAppTheme
 
 @OptIn(ExperimentalMaterial3Api::class)
 @Composable
-fun SignupScreen(navController: NavHostController){
+fun SignupScreenone(navController: NavHostController){
     Column(modifier = Modifier
         .fillMaxSize()
         .verticalScroll(rememberScrollState()),
         horizontalAlignment = Alignment.CenterHorizontally) {
         var context= LocalContext.current
         Text(
-            text = "Register here as a Service Provider",
+            text = "Register here as a customer",
             fontSize = 30.sp,
             fontFamily = FontFamily.Cursive,
             color = Color.Blue ,
@@ -81,15 +84,7 @@ fun SignupScreen(navController: NavHostController){
 
         )
 
-        Spacer(modifier = Modifier.height(10.dp))
 
-        OutlinedTextField(
-            value = email,
-            onValueChange ={ email = it},
-            label = { Text(text = " Enter Email") },
-            keyboardOptions = KeyboardOptions(keyboardType = KeyboardType.Email)
-
-        )
 
         Spacer(modifier = Modifier.height(10.dp))
 
@@ -102,12 +97,7 @@ fun SignupScreen(navController: NavHostController){
 
         Spacer(modifier = Modifier.height(10.dp))
         
-        OutlinedTextField(
-            value = credential,
-            onValueChange ={ credential = it},
-            label = { Text(text = "Enter credential") },
-            keyboardOptions = KeyboardOptions(keyboardType = KeyboardType.Password)
-        )
+
         Spacer(modifier = Modifier.height(10.dp))
         OutlinedTextField(
             value = password,
@@ -135,14 +125,14 @@ fun SignupScreen(navController: NavHostController){
 
 
         Button(onClick = {
-                         navController.navigate(ROUTE_LOGIN)
+                         navController.navigate(ROUTE_SIGN_UP_TWO)
 
             //logic
 
         },
             colors = ButtonDefaults.buttonColors(Buttonblue),
             shape = CutCornerShape(10.dp)) {
-            Text(text = "Have account? login",
+            Text(text = "Have account? signup us provider",
                 fontFamily = FontFamily.Cursive,
                 fontSize = 30.sp)
         }
@@ -155,9 +145,9 @@ fun SignupScreen(navController: NavHostController){
 }
 @Preview(showBackground = true, uiMode = Configuration.UI_MODE_NIGHT_NO)
 @Composable
-fun SignupScreenPreview() {
+fun SignupScreenonePreview() {
     NafuuRealEstateAppTheme {
-        SignupScreen(rememberNavController())
+        SignupScreenone(rememberNavController())
     }
 
 }

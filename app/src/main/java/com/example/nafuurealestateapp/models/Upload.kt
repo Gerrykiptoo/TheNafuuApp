@@ -1,7 +1,8 @@
 package com.example.nafuurealestateapp.models
 
 class Upload {
-   var name: String=""
+    var serviceName: String=""
+    var name: String=""
     var serviceProviderName:String=""
     var imageUrl:String = ""
     var id:String = ""
@@ -14,4 +15,5 @@ class Upload {
     }
 
     constructor()
+    constructor(s: String, s1: String, s2: String, s3: String, s4: String)
 }

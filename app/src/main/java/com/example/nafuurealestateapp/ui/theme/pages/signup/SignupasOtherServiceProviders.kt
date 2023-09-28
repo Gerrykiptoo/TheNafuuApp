@@ -35,6 +35,7 @@ import androidx.compose.ui.unit.sp
 import androidx.navigation.NavHostController
 import androidx.navigation.compose.rememberNavController
 import com.example.nafuurealestateapp.R
+import com.example.nafuurealestateapp.navigation.ROUTE_ADD_SERVICE
 import com.example.nafuurealestateapp.ui.theme.Buttonblue
 import com.example.nafuurealestateapp.ui.theme.NafuuRealEstateAppTheme
 
@@ -45,7 +46,7 @@ fun SignupasOtherServiceProviders(navController: NavHostController){
         horizontalAlignment = Alignment.CenterHorizontally) {
         var context= LocalContext.current
         Text(
-            text = "Register here",
+            text = "Register here as a service provider",
             fontSize = 30.sp,
             fontFamily = FontFamily.Serif,
             color = Color.Red,
@@ -96,6 +97,7 @@ fun SignupasOtherServiceProviders(navController: NavHostController){
 
 
         Button(onClick = {
+            navController.navigate(ROUTE_ADD_SERVICE)
             //-----------WRITE THE SIGNUP  LOGIC HERE------//
 
         },
@@ -110,6 +112,7 @@ fun SignupasOtherServiceProviders(navController: NavHostController){
 
 
         Button(onClick = {
+
 
         },
             colors = ButtonDefaults.buttonColors(Buttonblue),
@@ -128,7 +131,7 @@ fun SignupasOtherServiceProviders(navController: NavHostController){
 @Composable
 fun SignupasOtherServiceProvidersPreview() {
     NafuuRealEstateAppTheme {
-        SignupScreen(rememberNavController())
+        SignupasOtherServiceProviders(rememberNavController())
     }
 
 }

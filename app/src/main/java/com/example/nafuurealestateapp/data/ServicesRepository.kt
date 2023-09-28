@@ -30,11 +30,11 @@ class ServicesRepository(var navController: NavHostController,var context:Contex
     }
 
 
-    fun saveService(Name:String, serviceProvider:String,){
+    fun saveService(serviceName:String,serviceProvider:String,serviceDescription:String,imageUrl:String){
         var id = System.currentTimeMillis().toString()
-        var serviceData = Service(Name,serviceProvider,)
+        var serviceData = Service(serviceName,serviceProvider,serviceDescription,imageUrl,id)
         var serviceRef = FirebaseDatabase.getInstance().getReference()
-            .child("Products/$id")
+            .child("Services/$id")
         progress.show()
         serviceRef.setValue(serviceData).addOnCompleteListener {
             progress.dismiss()
@@ -82,11 +82,11 @@ class ServicesRepository(var navController: NavHostController,var context:Contex
         }
     }
 
-    fun updateService(name:String, serviceProvider:String, id:String){
+    fun updateService(serviceName:String, serviceProvider:String,serviceDescription:String,id:String,imageUrl: String){
         var updateRef = FirebaseDatabase.getInstance().getReference()
             .child("Products/$id")
         progress.show()
-        var updateData = Service(name,serviceProvider )
+        var updateData = Service(serviceName,serviceProvider,serviceDescription,imageUrl,id)
         updateRef.setValue(updateData).addOnCompleteListener {
             progress.dismiss()
             if (it.isSuccessful){
@@ -103,7 +103,7 @@ class ServicesRepository(var navController: NavHostController,var context:Contex
 
 
     // OPEN GALLERY TO PICK IMAGE
-    fun saveServiceWithImage(Name:String, ServiceProvider:String, filePath: Uri){
+    fun saveServiceWithImage(serviceName: String, serviceProvider: String, filePath: Uri){
         var id = System.currentTimeMillis().toString()
         var storageReference = FirebaseStorage.getInstance().getReference().child("Uploads/$id")
         progress.show()
@@ -114,8 +114,7 @@ class ServicesRepository(var navController: NavHostController,var context:Contex
                 // Proceed to store other data into the db
                 storageReference.downloadUrl.addOnSuccessListener {
                     var imageUrl = it.toString()
-                    var houseData = Upload(Name,ServiceProvider,
-                        imageUrl,id)
+                    var houseData = Upload(serviceName,serviceProvider,imageUrl,id)
                     var dbRef = FirebaseDatabase.getInstance()
                         .getReference().child("Uploads/$id")
                     dbRef.setValue(houseData)
@@ -128,7 +127,7 @@ class ServicesRepository(var navController: NavHostController,var context:Contex
     }
 
 
-    fun viewUploads(upload:MutableState<Upload>, uploads:SnapshotStateList<Upload>): SnapshotStateList<Upload> {
+        fun viewUploads(upload:MutableState<Upload>, uploads:SnapshotStateList<Upload>): SnapshotStateList<Upload> {
         var ref = FirebaseDatabase.getInstance().getReference().child("Uploads")
 
         progress.show()
